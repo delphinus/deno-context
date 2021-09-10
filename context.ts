@@ -197,7 +197,7 @@ export class DeadlineExceeded extends Error {
   }
 }
 
-type PromiseResolver<T> = (value?: T | PromiseLike<T>) => void;
+type PromiseResolver<T> = (value: T | PromiseLike<T>) => void;
 type PromiseRejector<T> = (reason?: any) => void;
 type ContextPromiseExecutor<T> = (
   resolve: PromiseResolver<T>,
@@ -322,7 +322,7 @@ export class ContextPromise<T> implements Promise<T> {
     return this.promise.finally(onfinally);
   }
 
-  resolve(value?: T | PromiseLike<T>): void {
+  resolve(value: T | PromiseLike<T>): void {
     return this._resolve(value);
   }
 
